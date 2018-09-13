@@ -102,7 +102,7 @@ client.on('message', message => {
   if(message.content === '&inv') {
   const embed = new Discord.RichEmbed()
   .setTitle('Click here')
-  .setURL('https://discordapp.com/api/oauth2/authorize?client_id=445977382801899521&permissions=0&scope=bot')
+  .setURL('https://discordapp.com/api/oauth2/authorize?client_id=485311331314958346&permissions=31744&scope=bot')
   .setColor('RANDOM')
   message.channel.send({embed: embed});
   }
