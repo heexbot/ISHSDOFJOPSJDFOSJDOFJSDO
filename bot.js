@@ -4,7 +4,7 @@ const prefix = '$'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`bot`,"http://twitch.tv/S-F")
+client.user.setGame(`Legends | system`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -27,87 +27,6 @@ client.user.setGame(`bot`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
-
-client.on("message", message => {
-
-            if (message.content.startsWith(prefix + "bc")) {
-        if(message.channel.type === 'dm') return message.reply('This Command Is Only For Server!');
-                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-  let args = message.content.split(" ").slice(1);
-  var argresult = args.join(' '); 
-  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
- m.send(`${argresult}\n ${m}`);
-})
- message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'all').size}\` : عدد الاعضاء المستلمين`); 
- message.delete(); 
-}
-});
-
-
-
-
-
-  client.on('message', async message => {
-  if(message.content.startsWith(prefix + "رسالة")) {
-    let i = client.users.size;
-    if(message.author.id !== '450269826724790273') return message.channel.send('❎ » هذا الأمر مخصص لصاحب البوت فقط');
-    var args = message.content.split(' ').slice(1).join(' ');
-    if(!args) return message.channel.send('❎ » يجب عليك كتابة الرسالة')
-    setTimeout(() => {
-      message.channel.send(`تم الارسال لـ ${i} شخص`)
-    }, client.users.size * 500);
-    client.users.forEach(s => {
-      s.send(args).catch(e => i--);
-    });
-  }
-});
-
-
-
-
-
-
-
-
-
-client.on('message', message => {//help msg
-  if (message.author.bot) return;
-   if (message.content === prefix + "help") {
-      message.react("☑")            
-
-   
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -220,7 +139,6 @@ channel.guild.owner.send(`<@!${channelremover.id}>
 
 
 
-
 client.on('message', ALPHACODES => { 
   var sender = ALPHACODES.author
   if(!ALPHACODES.guild) return
@@ -231,7 +149,7 @@ client.on('message', ALPHACODES => {
 }
         if(ALPHACODES.content.startsWith(prefix + `set-wlc`)) {        
         let perms = ALPHACODES.member.hasPermission(`MANAGE_CHANNELS`)
-        if(!perms) return ALPHACODES.channel.send('**تحتاج للتعديل بالرتبة واضافة mange_channels**')
+        if(!perms) return ALPHACODES.channel.send('**You need `Manage Channels` permission**')
         let args = ALPHACODES.content.split(" ").slice(1)
         if(!args.join(" ")) return ALPHACODES.reply(`
   ** ${prefix}set-wlc toggle **
@@ -277,68 +195,6 @@ ALPHACODES : __${sw[ALPHACODES.guild.id].msk}__`)
 })
 //by ALPHA CODES 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-if (message.content === '$help') {
-              var embed  = new Discord.RichEmbed()
-                .addField("broadcast (bc)" ,"الاستخدام: $broadcast <الرساله> , $bc <الرساله>")
-                .addField("BAN" ,"الاستخدام: $ban <المستخدم>")
-                .addField("KICK" ,"الاستخدام: $kick <المستخدم>")
-                .addField("ِAVATAR" ,"الاستخدام: $avatar
-                .addField("CLEAR" ,"الاستخدام: $clear <العدد>")
-                .addField("PING", "الأستخدام: $ping")
-                .addField("SERVERNAME", "الأستخدام: $servername")
-                .addField("CUT_TWEET", "الاستخدام $ct")
-                .addField("TWEET", "الاستخدام $tweet <الرساله>")
-                .addField("NO INVITE LINKE","تم اضافة خاصية منع الانفيتات ")
-                .addField("LOGIN" , " تم اضافة خاصية التفعيل لطلب تشغيلها في السيرفر كلم المبيرمجين ")
-                .setColor('RANDOM')
-.setColor('RANDOM')
-  message.author.sendEmbed(embed);
-    }
-});
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  var prefix = '$';
-client.on('message', message => {
-    let args = message.content.split(" ").slice(1);
-if (message.content.startsWith(prefix + 'مسح')) {
- let args = message.content.split(" ").slice(1)
-    let messagecount = parseInt(args);
-    if (args > 100) return message.reply("اعلى حد للمسح هو 100").then(messages => messages.delete(5000))
-    if (!messagecount) return message.reply("ااختر كمية المسح من 1-100").then(messages => messages.delete(5000))
-    message.channel.fetchMessages({limit: messagecount + 1}).then(messages => message.channel.bulkDelete(messages));
-    message.channel.send(`\`${args}\` تم المسح`).then(messages => messages.delete(5000));
-  }
-  });
 
 
 
@@ -405,7 +261,7 @@ client.on('message', async message => {
 
     let thisEmbed = new Discord.RichEmbed()
     .setAuthor(mention.user.username, mention.user.avatarURL)
-    .setTitle('تم اعطائك ميوت بسيرفر')
+    .setTitle('تم اغطائك ميوت بسيرفر')
     .setThumbnail(mention.user.avatarURL)
     .addField('# - السيرفر',message.guild.name,true)
     .addField('# - تم اعطائك ميوت بواسطة',message.author,true)
@@ -463,152 +319,5 @@ client.on('message', async message => {
       message.channel.send(`**:white_check_mark: ${mention.user.username} unmuted in the server ! :neutral_face:  **  `);
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-client.on('message', async message => {
-    let args = message.content.split(" ");
-    let command = args[0];
-
-    if(command === prefix + 'ban') {
-      if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply('انت لا تملك الصلاحيات اللازمة').then(msg => {
-        msg.delete(3500);
-        message.delete(3500);
-      });
-
-      if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply('انا لا املك الصلاحيات اللازمة. يحب توفر صلاحيات `Ban Members , Embed Links`').then(msg => {
-        msg.delete(3500);
-        message.delete(3500);
-      });
-
-      let mention = message.mentions.members.first();
-      if(!mention) return message.reply('**منشن عضو لطرده**').then(msg => {
-        msg.delete(3500);
-        message.delete(3500);
-      });
-      if(mention.highestRole.position >= message.guild.member(message.author).highestRole.positon) return message.reply('**لا يمكنك طرد شخص رتبته اعلى منك**').then(msg => {
-        msg.delete(3500);
-        message.delete(3500);
-      });
-      if(mention.highestRole.positon >= message.guild.member(client.user).highestRole.positon) return message.reply('**لا يمكنني طرد شخص رتبته اعلى مني**').then(msg => {
-        msg.delete(3500);
-        message.delete(3500);
-      });
-      if(mention.id === message.author.id) return message.reply('**لا يمكنك طرد  نفسك**').then(msg => {
-        msg.delete(3500);
-        message.delete(3500);
-      });
-
-       let duration = args[2];
-       if(!duration) return message.reply('**حدد وقت زمني لفك البان عن الشخص**').then(msg => {
-         msg.delete(3500);
-         message.delete(3500);
-       });
-       if(isNaN(duration)) return message.reply('**حدد وقت زمني صحيح**').then(msg => {
-         msg.delete(3500);
-         message.delete(3500);
-       });
-
-       let reason = message.content.split(" ").slice(3).join(" ");
-       if(!reason) reason = 'غير محدد';
-
-       let thisEmbed = new Discord.RichEmbed()
-       .setAuthor(mention.user.username , mention.user.avatarURL)
-       .setTitle('لقد تبندت من سيرفر')
-       .setThumbnail(mention.avatarURL)
-       .addField('# - السيرفر:',message.guild.name,true)
-       .addField('# - تم طردك بواسطة',message.author,true)
-       .addField('# - السبب',reason)
-       .setFooter(message.author.tag,message.author.avatarURL);
-       mention.send(thisEmbed).then(() => {
-       mention.ban({
-         reason: reason,
-       });
-       message.channel.send(`**:white_check_mark: ${mention.user.username} banned from the server ! :airplane: **  `)
-       setTimeout(() => {
-         if(duration === 0) return;
-         message.guild.unban(mention);
-       },duration * 60000);
-     });
-   }
-});
-
-
-client.on('message', function(message) {
-	const myID = "441554686399741962";
-    let args = message.content.split(" ").slice(1).join(" ");
-    if(message.content.startsWith(prefix + "setname")) {
-		        if(message.author.id !== myID) return;
-            if(!args) return message.reply('اكتب الحالة اللي تريدها.');
-        client.user.setUsername(args);
-        message.channel.send(':white_check_mark: Done!').then(msg => {
-           msg.delete(5000);
-          message.delete(5000);
-        });
-    } else if(message.content.startsWith(prefix + "stream")) {
-		        if(message.author.id !== myID) return;
-            if(!args) return message.reply('اكتب الحالة اللي تريدها.');
-        client.user.setGame(args , 'https://twitch.tv/6xlez1');
-        message.channel.send(':white_check_mark: Done!').then(msg => {
-           msg.delete(5000);
-          message.delete(5000);
-        });
-    } else if(message.content.startsWith(prefix + "play")) {
-				        if(message.author.id !== myID) return;
-            if(!args) return message.reply('اكتب الحالة اللي تريدها.');
-        client.user.setGame(args);
-        message.channel.send(':white_check_mark: Done!').then(msg => {
-           msg.delete(5000);
-          message.delete(5000);
-        });
-    } else if(message.content.startsWith(prefix + "listen")) {
-				        if(message.author.id !== myID) return;
-            if(!args) return message.reply('اكتب الحالة اللي تريدها.');
-        client.user.setActivity(args, {type:'LISTENING'});
-        message.channel.send(':white_check_mark: Done!').then(msg => {
-           msg.delete(5000);
-          message.delete(5000);
-        });
-    } else if(message.content.startsWith(prefix + "watch")) {
-				        if(message.author.id !== myID) return;
-            if(!args) return message.reply('اكتب الحالة اللي تريدها.');
-        client.user.setActivity(args, {type:'WATCHING'});
-        message.channel.send(':white_check_mark: Done!').then(msg => {
-           msg.delete(5000);
-          message.delete(5000);
-        });
-    } else if(message.content.startsWith(prefix + "setavatar")) {
-				        if(message.author.id !== myID) return;
-        client.user.setAvatar(args);
-        message.channel.send(':white_check_mark: Done!').then(msg => {
-                if(!args) return message.reply('اكتب الحالة اللي تريدها.');
-           msg.delete(5000);
-          message.delete(5000);
-        });
-    }
-});
-
 
 client.login(process.env.BOT_TOKEN);
