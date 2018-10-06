@@ -329,7 +329,7 @@ function hasRole(mem, role) {
 
 
 client.on('message', message => {
-     if (message.content === "-كم") {
+     if (message.content === "$كم") {
 		 if(!message.channel.guild) return;
      let embed = new Discord.RichEmbed()
   .setColor("RANDOM")
@@ -347,12 +347,12 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-     if (message.content === "-ping") {
+     if (message.content === "$ping") {
       const embed = new Discord.RichEmbed()
  
   .setColor("#FF0000")
   .addField('``سرعة أتصال الــبوت`` ' , `${Date.now() - message.createdTimestamp}` + ' ms`')
-                 .setFooter(` Premium Bot
+                 .setFooter(` Legends | system
  .`, 'https://b.top4top.net/p_6021qh431.jpg')
 
   message.channel.sendEmbed(embed);
@@ -371,7 +371,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    if (message.content === "-roles") {
+    if (message.content === "$roles") {
 		if(!message.channel.guild) return;
         var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
         const embed = new Discord.RichEmbed()
@@ -392,7 +392,7 @@ client.on('message', message => {
 
 
 
-   var prefix = "-";
+   var prefix = "$";
 var cats = [
 
 "https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg",
@@ -542,12 +542,12 @@ const Client = new Discord.Client();
 
 client.on('ready', () => {
    console.log(`----------------`);
-      console.log(`PANDA BOT STARTED`);
+      console.log(`Legends | system STARTED`);
         console.log(`---------------`);
       console.log(`ON ${client.guilds.size} Servers `);
     console.log(`---------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(`in 54 server -help`,"http://twitch.tv/y04zgamer")
+  client.user.setGame(`Legends | system`,"http://twitch.tv/")
    client.user.setStatus("dnd")
 });
 
@@ -592,7 +592,7 @@ client.on('ready', () => {
 
 
 client.on("message", message => {
-     if (message.content === "-kick") {
+     if (message.content === "$kick") {
          if(!message.channel.guild) return message.reply('** This command only for servers **');
         message.reply("bla bla")
      }
@@ -602,7 +602,7 @@ client.on("message", message => {
 
 
 client.on("message", message => {
-     if (message.content === "-ban") {
+     if (message.content === "$ban") {
          if(!message.channel.guild) return message.reply('** This command only for servers **');
         message.reply("bla bla")
      }
@@ -619,7 +619,7 @@ client.on("message", message => {
 
 
 client.on('message', message => {
-    if (message.content.startsWith("-avatar")) {
+    if (message.content.startsWith("$avatar")) {
         var mentionned = message.mentions.users.first();
     var x5bzm;
       if(mentionned){
@@ -654,7 +654,7 @@ client.on('message', message => {
 
 
 Client.on('message', message => {
-if (message.content.split(' ')[0] == '-bc')
+if (message.content.split(' ')[0] == '$bc')
  message.guild.members.forEach( member => {
          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
 member.send( `${member} ! ` + "**" + message.guild.name + " : ** " + message.content.substr(3));
@@ -735,7 +735,7 @@ client.on('message', msg => {
   let args = msg.content.split(" ").slice(1);
 
 
-if (command == "غرد") {
+if (command == "غرد$") {
     let embed = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setAuthor(msg.author.username, msg.author.avatarURL)
@@ -819,7 +819,7 @@ if (command == "غرد") {
 
 
 client.on("message", message => {
-    var prefix = "-";
+    var prefix = "$";
  
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix - "clear")) {
@@ -914,7 +914,7 @@ const cuttweet = [
 ]
 
 client.on('message', message => {
-  if (message.content === `-كت تويت`) {
+  if (message.content === `$كت تويت`) {
 message.channel.sendMessage({embed: {
   color: 3547003,
   description: `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`
@@ -980,7 +980,7 @@ client.on("guildMemberAdd", member => {
 
 
 
-var prefix = "-";
+var prefix = "$";
 
 client.on('message', message => {
   if (message.author.bot) return;
@@ -992,7 +992,7 @@ client.on('message', message => {
   let args = message.content.split(" ").slice(1);
 
 // -say
-  if (command === "say") {
+  if (command === "$say") {
           message.delete()
     message.channel.sendMessage(args.join(" ")).catch(console.error);
   }
@@ -1025,7 +1025,7 @@ if (command == "embed") {
 
 
 client.on('message', message => {
-   if (message.content === "-id") {
+   if (message.content === "$id") {
    let embed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setThumbnail(message.author.avatarURL)
@@ -1044,7 +1044,7 @@ client.on('message', message => {
 
 
 client.on("message", message => {
-    var prefix = "-";
+    var prefix = "$";
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
  if (!args[1]) {
@@ -1070,7 +1070,7 @@ client.on("message", message => {
 
 
 
-var prefix = "-";
+var prefix = "$";
 client.on('message', message => {
     if(message.content == prefix + 'server') {
         var servername = message.guild.name
@@ -1111,7 +1111,7 @@ client.on('message', message => {
 
 
 
-  var prefix = "-";
+  var prefix = "$";
     client.on('message', message => {
     if(message.content.startsWith(prefix + '2avatar')) {
          var men = message.mentions.users.first();
